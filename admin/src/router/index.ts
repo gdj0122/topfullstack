@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Main from '../views/Main.vue'
 import CourseList from '../views/courses/CourseList.vue'
+import CourseEdit from '../views/courses/CourseEdit.vue'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,8 @@ Vue.use(VueRouter)
     children:[
       {name: 'home',path:'/',component:Home},
       {name: 'course-list',path:'/course/list',component:CourseList},
+      {name: 'course-edit',path:'/course/edit/:id',component:CourseEdit,props:true},
+      {name: 'course-create',path:'/course/create',component:CourseEdit},
     ]
   },
   // {

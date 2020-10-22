@@ -2,8 +2,8 @@
   <div>
       <h3>视频列表</h3>
       <el-table :data="data.data" border stripe>
-        <el-table-column v-for="field in fields"
-          :prop="field.id"
+        <el-table-column v-for="(field,name) in fields"
+          :prop="name"
           :key="field.id"
           :label="field.label"
           :width="field.width">
@@ -22,9 +22,9 @@ export default class CourseList extends Vue{
 
   data = {};
   fields = {
-    _id:{},
-    name:{},
-    cover:{}
+    _id:{label:'ID'},
+    name:{label:"名称"},
+    cover:{label:"封面图"}
   }
 
   async fetch () {
