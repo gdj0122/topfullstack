@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { log } from "util";
+// import { log } from "util";
 import { Vue , Component,Prop } from "vue-property-decorator";
 
 
@@ -24,17 +24,21 @@ export default class CourseEdit extends Vue{
     cover:{label:"封面图",type:"input"}
   }
 
-  // async fetch () {
-  //   const res = await this.$http.get('courses')
-  //   this.data = res.data
-  // }
+  async fetch () {
+    const res = await this.$http.get(`courses/${this.id}`)
+    this.data = res.data
+  }
   async submit(data){
-    await this.$http.post('courses',data)
+    const url = this.isNew?`courses`:`courses/${this.id}`
+    const method = this.isNew ?'post':'put'
+    await this.$http[method](url,data)
     this.$message.success('保存成功')
+    this.data={}
     this.$router.go(-1)
+    // console.log(data)
   }
   created(){
-    // this.fetch()
+    !this.isNew && this.fetch()
   }
   get isNew(){
     return !this.id

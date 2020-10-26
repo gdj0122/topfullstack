@@ -38,8 +38,8 @@ export default class App extends Vue {
         title: '内容管理',
         items: [
           {title: '首页',path:"/"},
-          {title: '视频管理',path:"/course/list"},
-          {title: '视频编辑',path:"/course/edit"}
+          {title: '视频管理',path:"/courses/list"},
+          {title: '视频编辑',path:"/episodes/list"}
         ]
       },
       {
