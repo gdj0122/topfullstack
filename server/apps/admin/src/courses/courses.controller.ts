@@ -20,8 +20,8 @@ export class CoursesController {
         return{
         title:"视频管理",
         column:[
-                {prop:"name",label:"视频名称"},
-                {prop:"cover",label:"视频封面图"},
+                {prop:"name",label:"视频名称",sortable:true,search:true,regex:true,span:24,row:true},
+                {prop:"cover",label:"视频封面图",type:"upload",listType:"picture-img",action:"upload",width:"120",height:"200"},
             ]
         }
     }

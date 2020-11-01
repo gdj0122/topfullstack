@@ -10,9 +10,11 @@ import router from './router'
 // Vue.use(EleForm)
 Vue.config.productionTip = false
 
-Vue.prototype.$http = axios.create({
+const http = axios.create({
   baseURL:'http://localhost:3000/'
 })
+Vue.prototype.$httpajax = http
+Vue.prototype.$http = http
 
 new Vue({
   router,

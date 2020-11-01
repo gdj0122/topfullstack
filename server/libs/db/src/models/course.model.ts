@@ -15,7 +15,5 @@ export class Course {
     @ApiProperty({description:"封面"})
     @prop()
     cover:string
-
-    @arrayProp({ref:"Episode"})
-    episodes:Ref<Episode>[]
+    
 }
