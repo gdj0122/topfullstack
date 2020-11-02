@@ -13,7 +13,8 @@ Vue.config.productionTip = false
 const http = axios.create({
   baseURL:'http://localhost:3000/'
 })
-Vue.prototype.$httpajax = http
+Vue.prototype.$axios = http
+window.axios=http
 Vue.prototype.$http = http
 
 new Vue({

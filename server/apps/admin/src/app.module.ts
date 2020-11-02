@@ -16,10 +16,7 @@ const MAO = require('multer-aliyun-oss');
       // dest:"uploads"
       storage: MAO({
         config: {
-            region: 'oss-cn-hangzhou',
-            accessKeyId: 'LTAI4GJGFc59Hm3Vxx26f8Ew',
-            accessKeySecret: 'F9WfqD8rO4HmPJQwdgJ2hr67iPYQ16',
-            bucket: 'jiuer-shipin'
+            
         }
       })
     }),
